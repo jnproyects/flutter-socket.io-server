@@ -22,11 +22,20 @@
             console.log('Desconectado del servidor')
         });
 
-        socket.emit('mensaje', { nombre: 'Juan' });
-
-        socket.on('mensajeTodos', function( payload ){
-            console.log( 'Escuchando:', payload );
+        socket.on('active-bands', function( bands ) {
+            console.clear();
+            console.table( bands );
         });
+
+        // socket.emit('mensaje', { nombre: 'Juan' });
+
+        // socket.on('mensajeTodos', function( payload ){
+        //     console.log( 'Escuchando:', payload );
+        // });
+
+        // socket.on('emitir-mensaje', function( payload ){
+        //     console.log( 'Escuchando:', payload );
+        // });
 
     </script>
 
